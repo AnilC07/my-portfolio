@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Head from "next/head";
 
@@ -9,6 +9,7 @@ import NotificationContext from "@/store/NotificationContext";
 
 const Contact = (props) => {
   const notificationCtx = useContext(NotificationContext);
+  const [isSent, setIsSent] = useState(false)
 
   const submitFormHandler = async (data) => {
     notificationCtx.showNotification({
@@ -26,7 +27,7 @@ const Contact = (props) => {
         status: "success",
         title: "Mail envoyé avec succès",
       });
-
+      setIsSent(true)
     } catch (err) {
       notificationCtx.showNotification({
         status: "Erreur",
@@ -57,7 +58,7 @@ const Contact = (props) => {
       <div className={classes.titre}>
         <h2>Formulaire de contact</h2>
       </div>
-      <Form onSubmitFormHandler={submitFormHandler} />
+      <Form onSubmitFormHandler={submitFormHandler} isSent={isSent}/>
     </>
   );
 };
