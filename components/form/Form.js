@@ -10,6 +10,7 @@ function Form(props) {
   const compagnyRef = useRef();
   const subjectRef = useRef();
   const messageRef = useRef();
+  console.log(props);
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +32,14 @@ function Form(props) {
     props.onSubmitFormHandler(mailData);
   };
 
+  if (props.isSent) {
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    compagnyRef.current.value = "";
+    subjectRef.current.value = "";
+    messageRef.current.value = "";
+  }
+
   return (
     <form className={classes.form} onSubmit={onFormSubmit}>
       <Input
@@ -49,13 +58,19 @@ function Form(props) {
       />
       <Input ref={compagnyRef} label="Entreprise" type="text" id="compagny" />
 
-      <Input ref={subjectRef} label="Objet de votre message" type="text" id="subject" require='true' />
+      <Input
+        ref={subjectRef}
+        label="Objet de votre message"
+        type="text"
+        id="subject"
+        require="true"
+      />
 
       <Textarea
         ref={messageRef}
         label="Message"
         id="message"
-        rows="5"
+        rows="8"
         require="true"
         placeholder="Veuillez entrer votre message"
       />
