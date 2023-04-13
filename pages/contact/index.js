@@ -18,7 +18,7 @@ const Contact = (props) => {
     });
 
     try {
-      const sendMail = await fetch("/api/contact/send-mail", {
+      const sendMail = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -34,18 +34,6 @@ const Contact = (props) => {
         title:
           "Une erreur a été détectée dans la validation du formulaire. Merci de réessayer !",
       });
-      console.log(err);
-    }
-
-    const { name, email, compagny } = data;
-
-    try {
-      const userData = await fetch("/api/contact/store-sender-datas", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, compagny }),
-      });
-    } catch (err) {
       console.log(err);
     }
   };
