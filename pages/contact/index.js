@@ -8,23 +8,20 @@ import NotificationContext from "@/store/NotificationContext";
 
 const Contact = (props) => {
   const notificationCtx = useContext(NotificationContext);
-  console.log(notificationCtx)
 
   const submitFormHandler = async (data) => {
     notificationCtx.showNotification({
       status: "pending",
       title: "Envoi du mail en cours",
     });
-    console.log(notificationCtx)
+
 
     try {
-      const sendMail = await fetch("/api/contact", {
+      const sendMail = await fetch("/api/contact/send-mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
-      const sendMailData = await sendMail.json();
       notificationCtx.showNotification({
         status: "success",
         title: "Mail envoyé avec succèes",
@@ -39,15 +36,14 @@ const Contact = (props) => {
       console.log(err);
     }
 
-    const { name, email } = data;
+    const { name, email,compagny } = data;
 
     try {
-      const userData = await fetch("/api/storeContact", {
+      const userData = await fetch("/api/contact/store-sender-datas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email,compagny }),
       });
-      const utilisateur = await userData.json();
     } catch (err) {
       console.log(err);
     }
