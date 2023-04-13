@@ -1,9 +1,10 @@
+import { useContext } from "react";
+
 import Head from "next/head";
 
 import classes from "../../styles/Contact.module.css";
 import Form from "@/components/form/Form";
-import Notification from "@/components/UI/Notification";
-import { useContext } from "react";
+
 import NotificationContext from "@/store/NotificationContext";
 
 const Contact = (props) => {
@@ -15,7 +16,6 @@ const Contact = (props) => {
       title: "Envoi du mail en cours",
     });
 
-
     try {
       const sendMail = await fetch("/api/contact/send-mail", {
         method: "POST",
@@ -24,14 +24,13 @@ const Contact = (props) => {
       });
       notificationCtx.showNotification({
         status: "success",
-        title: "Mail envoyé avec succèes",
+        title: "Mail envoyé avec succès",
       });
 
-      
     } catch (err) {
       notificationCtx.showNotification({
-        status: "error",
-        title: "Une erreur à ete detecter dans la validtion du formulaire. Merci de reessayer !",
+        status: "Erreur",
+        title: "Une erreur a été détectée dans la validation du formulaire. Merci de réessayer !",
       });
       console.log(err);
     }
@@ -53,7 +52,7 @@ const Contact = (props) => {
     <>
       <Head lang="en">
         <title>Contact</title>
-        <meta name="descriptions" content="Send me messages" />
+        <meta name="descriptions" content="Besoin d'une prestation ou de prendre contact en vue d'une future collaboration ? Merci de bien vouloir remplir le formulaire de contact." />
       </Head>
       <div className={classes.titre}>
         <h2>Formulaire de contact</h2>
