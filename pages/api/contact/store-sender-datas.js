@@ -1,4 +1,4 @@
-import { checkExistingUser, connectToDB, insertDoc } from "@/lib/db-util";
+import { connectToDB, insertDoc } from "@/lib/db-util";
 
 const storeUserData = async (req, res) => {
   const { name, email, compagny } = req.body;
