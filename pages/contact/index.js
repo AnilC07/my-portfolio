@@ -9,7 +9,7 @@ import NotificationContext from "@/store/NotificationContext";
 
 const Contact = (props) => {
   const notificationCtx = useContext(NotificationContext);
-  const [isSent, setIsSent] = useState(false)
+  const [isSent, setIsSent] = useState(false);
 
   const submitFormHandler = async (data) => {
     notificationCtx.showNotification({
@@ -27,22 +27,23 @@ const Contact = (props) => {
         status: "success",
         title: "Mail envoyé avec succès",
       });
-      setIsSent(true)
+      setIsSent(true);
     } catch (err) {
       notificationCtx.showNotification({
         status: "Erreur",
-        title: "Une erreur a été détectée dans la validation du formulaire. Merci de réessayer !",
+        title:
+          "Une erreur a été détectée dans la validation du formulaire. Merci de réessayer !",
       });
       console.log(err);
     }
 
-    const { name, email,compagny } = data;
+    const { name, email, compagny } = data;
 
     try {
       const userData = await fetch("/api/contact/store-sender-datas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email,compagny }),
+        body: JSON.stringify({ name, email, compagny }),
       });
     } catch (err) {
       console.log(err);
@@ -53,12 +54,15 @@ const Contact = (props) => {
     <>
       <Head lang="en">
         <title>Contact</title>
-        <meta name="descriptions" content="Besoin d'une prestation ou de prendre contact en vue d'une future collaboration ? Merci de bien vouloir remplir le formulaire de contact." />
+        <meta
+          name="descriptions"
+          content="Besoin d'une prestation ou de prendre contact en vue d'une future collaboration ? Merci de bien vouloir remplir le formulaire de contact."
+        />
       </Head>
       <div className={classes.titre}>
         <h2>Formulaire de contact</h2>
       </div>
-      <Form onSubmitFormHandler={submitFormHandler} isSent={isSent}/>
+      <Form onSubmitFormHandler={submitFormHandler} isSent={isSent} />
     </>
   );
 };
