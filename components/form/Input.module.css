@@ -1,0 +1,19 @@
+.input{
+display: flex;
+
+margin-bottom: 1rem;
+}
+
+.input label{
+flex-basis: 40%;
+}
+
+.input input{
+    flex-basis: 50%;
+    border-radius: 5px;
+    padding: 5px 0 5px 10px;
+}
+
+.input input:focus{
+    outline: none;
+}

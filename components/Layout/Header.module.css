@@ -1,0 +1,40 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background-color: #7e0b0b;
+    color:white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titre h1 {
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titre h2{
+}
+
+.image {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+}

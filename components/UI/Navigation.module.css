@@ -1,0 +1,14 @@
+.navigation{
+font-size: 23px;
+
+flex-basis: 29%;
+}
+
+.nav-items{
+display: flex;
+gap: 6rem;
+}
+
+.nav-items li{
+    
+}

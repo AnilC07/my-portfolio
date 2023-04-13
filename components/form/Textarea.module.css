@@ -1,0 +1,15 @@
+.textarea{
+display: flex;
+}
+
+.textarea label{
+flex-basis: 40%;
+}
+
+.textarea textarea{
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    width: 50%;
+}
+
+.textarea textarea:focus{outline: none;}

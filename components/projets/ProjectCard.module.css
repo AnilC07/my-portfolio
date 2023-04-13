@@ -1,0 +1,27 @@
+.card{
+    width: 48%;
+    height: 130px;
+    display: flex;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.3);
+   
+}
+
+.vignette{
+    flex-basis: 30%;
+}
+
+.contenue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-content: center; */
+    flex-basis: 70%;
+}
+
+.contenue h3{
+padding: .5rem 0;
+}
+
+.contenue p{}
