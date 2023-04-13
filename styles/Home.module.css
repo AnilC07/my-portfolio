@@ -1,22 +1,5 @@
 
 
-.about {
-    background: #ccc;
-    padding: 2rem 0;
-}
-
-.about .text {
-    width: 55%;
-    font-size: 1.2rem;
-    text-align: center;
-
-    margin: 0 auto;
-}
-
-.text a {
-    color: blue
-}
-
 .footer{
     background: coral;
 }
