@@ -9,7 +9,7 @@ module.exports = (phase) => {
         MONGODB_USER: "anilcelik075",
         MONGODB_PASSWORD: "rbEGImy6qz912bxo",
         MONGODB_CLUSTER_NAME: "cluster0",
-        MONGODB_DATABASE_NAME: "visiteurs-dev",
+        MONGODB_DATABASE_NAME: "portfolio-dev",
       },
     };
   }
@@ -21,7 +21,7 @@ module.exports = (phase) => {
       mongodb_username: "anilcelik075",
       MONGODB_PASSWORD: "rbEGImy6qz912bxo",
       MONGODB_CLUSTER_NAME: "cluster0",
-      MONGODB_DATABASE_NAME: "visiteurs-prod",
+      MONGODB_DATABASE_NAME: "portfolio",
     },
   };
 };
