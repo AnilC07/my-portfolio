@@ -5,9 +5,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Bienvenue</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="description" content="This is my portfolio" />
+        <title>Accueil</title>
       </Head>
       <section className={classes.about}>
         <div className="section-title">
