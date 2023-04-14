@@ -6,6 +6,8 @@ margin-bottom: 3rem;
 
 .input label{
 flex-basis: 40%;
+display: inline-flex;
+gap: 1px;
 }
 
 .input input{

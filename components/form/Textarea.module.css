@@ -4,6 +4,8 @@ display: flex;
 
 .textarea label{
 flex-basis: 40%;
+display: inline-flex;
+gap: 1px;
 }
 
 .textarea textarea{
