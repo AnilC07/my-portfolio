@@ -14,7 +14,7 @@ const Contact = () => {
   const submitFormHandler = async (data) => {
     notificationCtx.showNotification({
       status: "pending",
-      title: "Envoi du mail en cours",
+      title: "Soumission du formulaire en cours",
     });
 
     try {
@@ -24,13 +24,15 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
       console.log(sendMail)
-const result = await sendMail.json()
+// const result = await sendMail.json()
       notificationCtx.showNotification({
         status: "success",
-        title: "Mail envoyé avec succès",
+        title: "Le formulaire bien été soumis",
       });
       setIsSent(true);
     } catch (err) {
+      setIsSent(false);
+
       notificationCtx.showNotification({
         status: "Erreur",
         title:

@@ -1,8 +1,11 @@
 import Input from "./Input";
 import classes from "./Form.module.css";
 import Textarea from "./Textarea";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 
-import { useRef } from "react";
+
+import { useEffect, useRef, useState } from "react";
+import MessageWrapper from "../UI/MessageWrapper";
 
 function Form(props) {
   const nameRef = useRef();
@@ -10,7 +13,7 @@ function Form(props) {
   const compagnyRef = useRef();
   const subjectRef = useRef();
   const messageRef = useRef();
-  console.log(props);
+  const [error, setError] = useState(false)
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
@@ -29,9 +32,26 @@ function Form(props) {
       message: enteredMessage,
     };
 
+    if (
+      !mailData.name ||
+      mailData.name.trim().length === 0 ||mailData.name.length === 0 ||
+      !mailData.email || mailData.email.length === 0 ||
+      !mailData.email.includes("@") ||
+      mailData.email.trim().length === 0 ||
+      !mailData.message || mailData.message.length === 0 ||
+      mailData.message.trim().length === 0 ||
+      !mailData.subject || mailData.subject.length === 0 ||
+      mailData.subject.trim().length === 0
+    ) {
+setError(true)
+      return
+    }
+
+    setError(false)
+
     props.onSubmitFormHandler(mailData);
   };
-
+useEffect(()=>{
   if (props.isSent) {
     nameRef.current.value = "";
     emailRef.current.value = "";
@@ -39,22 +59,28 @@ function Form(props) {
     subjectRef.current.value = "";
     messageRef.current.value = "";
   }
+},[props.isSent])
+
 
   return (
     <form className={classes.form} onSubmit={onFormSubmit}>
+    {error && 
+       <MessageWrapper><span><AiOutlineExclamationCircle /></span> <p>Une erreur est apparaue lors de la soumission du formulaire. Merci de bien vouloir verifier toute vos saisies.</p></MessageWrapper>}
       <Input
         ref={nameRef}
         label="Prènom"
         type="name"
         id="name"
-        require="true"
+        placeholder="John Doe"
+        require={true}
       />
       <Input
         ref={emailRef}
         label="Email"
         type="email"
         id="email"
-        require="true"
+        placeholder="johndoe@example.com"
+        require={true}
       />
       <Input ref={compagnyRef} label="Entreprise" type="text" id="compagny" />
 
@@ -63,7 +89,7 @@ function Form(props) {
         label="Objet de votre message"
         type="text"
         id="subject"
-        require="true"
+        require={true}
       />
 
       <Textarea
@@ -71,7 +97,7 @@ function Form(props) {
         label="Message"
         id="message"
         rows="8"
-        require="true"
+        require={true}
         placeholder="Veuillez entrer votre message"
       />
       <div className={classes.button}>
