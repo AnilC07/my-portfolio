@@ -1,4 +1,3 @@
-
 import { connectToDB, saveUserInfos } from "@/lib/db-util";
 import nodemailer from "nodemailer";
 
@@ -8,7 +7,7 @@ async function emailHandler(req, res) {
   }
 
   const { name, email, message, compagny, subject } = req.body;
-  console.log(req.body)
+  console.log(req.body);
 
   if (
     !name ||
@@ -29,26 +28,40 @@ async function emailHandler(req, res) {
 
   // 1 ENVOIE DU MAIL
 
-    // create reusable transporter object using the default SMTP transport
+  try {
     let transporter = nodemailer.createTransport({
+      port: 465,
       service: "gmail",
       host: "smtp.gmail.com",
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
-        user: process.env.EMAIL,
+        user: "contact.anil.dev@gmail.com",
         pass: process.env.PASSWORD,
       },
     });
-  
-    // send mail with defined transport object
-    const info = transporter.sendMail({
-      from: email, // sender address
-      to: process.env.EMAIL, // list of receivers
-      subject: subject, // Subject line
-      text: `${name} <${email}> de la societe ${compagny} à envoyer le message suivant:\n\n${message}`, // plain text body
-    });
+  } catch (error) {
+    console.log(error.message);
+    return;
+  }
 
-  // 2 SI ENVOIE DU MAIL OK => ENRENGISTRE L'UTILISATEUR
+try {
+  const info = await transporter.sendMail({
+    from: email,
+    to: "contact.anil.dev@gmail.com",
+    subject: subject,
+    text: `${name} <${email}> de la societe ${compagny} à envoyer le message suivant:\n\n${message}`, // plain text body
+  });
+  const result = await info.json()
+  console.log(result)
+} catch (error) {
+  console.log(error.message);
+  res.status(500).json({message: "Une erreur est apparue lors de l'envoie de votre message. Veuillez reessayer!"})
+  return;
+}
+
+
+
+  // 2 SI ENVOIE DU MAIL OK => ENRENGISTRE LES INFOS DE L'UTILISATEUR
 
   const userDatas = { name, email, compagny };
 
@@ -63,11 +76,7 @@ async function emailHandler(req, res) {
   }
 
   try {
-    const resultOfSaveUser = await saveUserInfos(client, "visiteur", userDatas);
-    res.status(201).json({
-      status: "success",
-      message: "Les informations ont bien été enrengistrer",
-    });
+    const result = await saveUserInfos(client, "visiteur", userDatas);
   } catch (error) {
     console.log(error);
     client.close();
@@ -79,6 +88,3 @@ async function emailHandler(req, res) {
 }
 
 export default emailHandler;
-
-
-

@@ -7,7 +7,7 @@ import Form from "@/components/form/Form";
 
 import NotificationContext from "@/store/NotificationContext";
 
-const Contact = (props) => {
+const Contact = () => {
   const notificationCtx = useContext(NotificationContext);
   const [isSent, setIsSent] = useState(false);
 
@@ -23,6 +23,7 @@ const Contact = (props) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+
       notificationCtx.showNotification({
         status: "success",
         title: "Mail envoyé avec succès",
