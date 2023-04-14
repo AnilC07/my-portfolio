@@ -24,7 +24,7 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
       console.log(sendMail)
-
+const result = await sendMail.json()
       notificationCtx.showNotification({
         status: "success",
         title: "Mail envoyé avec succès",
