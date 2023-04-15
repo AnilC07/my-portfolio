@@ -7,7 +7,7 @@ async function emailHandler(req, res) {
   }
 
   const { name, email, message, compagny, subject } = req.body;
-  console.log(req.body);
+  // console.log(req.body);
 
   if (
     !name ||

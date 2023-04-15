@@ -23,7 +23,7 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      console.log(sendMail)
+      // console.log(sendMail)
 // const result = await sendMail.json()
       notificationCtx.showNotification({
         status: "success",

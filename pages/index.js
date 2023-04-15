@@ -5,29 +5,27 @@ import ProjectContainer from "@/components/projets/ProjectContainer";
 import { projectHandler } from "./api/projets";
 
 export default function Home(props) {
-  console.log(props)
+  console.log(props);
   return (
     <>
       <Head>
         <title>Accueil</title>
       </Head>
       <About />
-      <ProjectContainer projets= {props.data}/>
+      <ProjectContainer projets={props.data} />
     </>
   );
 }
 
-
-export async function getStaticProps(){
-
+export async function getStaticProps() {
   let projects = await projectHandler();
-  projects = JSON.parse(projects)
-
-return {
-  props: {
-    status:"message",
-    data : projects   
-  },
-  revalidate:60
- }
+  projects = JSON.parse(projects);
+  // console.log({ projects });
+  return {
+    props: {
+      status: "message",
+      data: projects,
+    },
+    revalidate: 60,
+  };
 }
