@@ -1,31 +1,27 @@
 import Card from "./ProjectCard";
 import classes from "./ProjectContainer.module.css";
 
-function ProjectContainer(props) {
+function ProjectContainer({ projets }) {
+  console.log(projets);
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
         <h2 className={classes.competence}>React</h2>
       </div>
       <div className={classes.projets}>
-        <Card titre="" image="" description="" />
+        {projets.map((projet) => {
+          return (
+            <Card
+              key={projet._id}
+              titre={projet.titre}
+              image={projet.img_vignette}
+              description={projet.description}
+            />
+          );
+          return;
+        })}
       </div>
-      <div className={classes.header}>
-        <h2 className={classes.competence}>Next.js</h2>
-      </div>
-      <div className={classes.projets}></div>
-      <div className={classes.header}>
-        <h2 className={classes.competence}>Node.js</h2>
-      </div>
-      <div className={classes.projets}></div>
-      <div className={classes.header}>
-        <h2 className={classes.competence}>React</h2>
-      </div>
-      <div className={classes.projets}></div>
-      <div className={classes.header}>
-        <h2 className={classes.competence}>API</h2>
-      </div>
-      <div className={classes.projets}></div>
     </div>
   );
 }
