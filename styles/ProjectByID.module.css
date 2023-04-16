@@ -1,0 +1,78 @@
+.container {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+
+    border: 1px solid black;
+}
+
+.project-title {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+    font-size: 2.3rem;
+}
+
+
+.project-content {
+    padding: 1rem;
+}
+
+.project-content h3 {
+    font-size: 25px;
+}
+
+.actions{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 1rem;
+}
+
+.link{
+    display: inline-block;
+}
+
+.link a {
+    color: black;
+    
+    background: coral;
+
+    padding: 1rem 2rem;
+    border-radius: 100px;
+}
+
+.write-comment {
+    color: black;
+    display: inline-block;
+    background: coral;
+cursor: pointer;
+
+    padding: 1rem 2rem;
+    border-radius: 100px;
+}
+
+
+.read-comment{
+    color: black;
+    display: inline-block;
+    background: coral;
+    cursor: pointer;
+
+
+    padding: 1rem 2rem;
+    border-radius: 100px;
+}
+
+
+.objectif p {}
+
+.knowledge {}
+
+
+
+.knowledge p {}
