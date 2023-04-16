@@ -4,11 +4,11 @@ import Link from "next/link";
 
 function Card(props) {
   // console.log(props);
-  const { titre, image, description } = props;
+  const { titre, image, description,id } = props;
   // console.log(`/images/projets/${titre}/${image}`);
   return (
     <div className={classes.card}>
-      <Link href="/">
+      <Link href={`/projets/${id}`}>
         <div className={classes.vignette}>
           <Image
             src={`/images/projets/${titre}/${image}`}
