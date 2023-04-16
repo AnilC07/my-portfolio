@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import Card from "./ProjectCard";
 import classes from "./ProjectWrapper.module.css";
 
+const filterProjects = (datas, techno) => {
+  const arr = [];
+  datas.find((el) => {
+    if (el.technos === techno) {
+      arr.push(el);
+    }
+  });
+
+  return arr;
+};
+
 function ProjectWrapper({ projets, titreWrapper, filtre }) {
-  //   console.log("projet wrapper ");
-  //   console.log({ projets });
-  const filteredProjects = projets.filter((el) => el.technos === filtre);
-  //   console.log({ filteredProjects });
+  const [filteredProjects, setFilteredProjects] = useState([]);
+
+  useEffect(() => {
+    setFilteredProjects(() => filterProjects(projets, filtre));
+  }, [filterProjects]);
+
   return (
     <>
       <div className={classes.header}>

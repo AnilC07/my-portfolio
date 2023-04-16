@@ -10,6 +10,7 @@ module.exports = (phase) => {
         MONGODB_PASSWORD: "0DAcIsZKXFNRrYob",
         MONGODB_CLUSTER_NAME: "cluster0",
         MONGODB_DATABASE_NAME: "portfolio-dev",
+        // MONGODB_DATABASE_NAME: "portfolio",
       },
     };
   }
