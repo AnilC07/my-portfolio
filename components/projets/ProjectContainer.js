@@ -9,6 +9,7 @@ function ProjectContainer({ projets }) {
     <div className={classes.container}>
     <ProjectWrapper projets={projets} filtre='HTML/CSS' titreWrapper='HTML/CSS' />
     <ProjectWrapper projets={projets} filtre='nextjs' titreWrapper='Next.js' />
+    <ProjectWrapper projets={projets} filtre='reactjs' titreWrapper='React.js' />
     </div>
   );
 }
