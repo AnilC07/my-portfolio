@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./ProjectCard";
 import classes from "./ProjectWrapper.module.css";
+import Link from "next/link";
 
 const filterProjects = (datas, techno) => {
   const arr = [];
@@ -31,7 +32,8 @@ function ProjectWrapper({ projets, titreWrapper, filtre }) {
             {filteredProjects.map((projet) => {
               return (
                 <Card
-                  key={projet._id}
+                  key={projet.id}
+                  id={projet.id}
                   titre={projet.titre}
                   image={projet.img_vignette}
                   description={projet.description}
