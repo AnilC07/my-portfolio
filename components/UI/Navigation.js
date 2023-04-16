@@ -11,9 +11,6 @@ return <nav className={classes.navigation}>
     <Link href="/">Accueil</Link>
   </li>
   <li>
-    <Link href="/projets">Projets</Link>
-  </li>
-  <li>
     <Link href="/contact">Contact</Link>
   </li>
 </ul>
