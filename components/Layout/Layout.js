@@ -10,7 +10,7 @@ function Layout(props) {
   return (
     <>
       <Header />
-      <main>{props.children}</main>
+      <main className={props.montserrat}>{props.children}</main>
       {activeNotification && (
         <Notification
           status={activeNotification.status}
