@@ -19,13 +19,10 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   let projects = await projectHandler();
-  projects = JSON.parse(projects);
-  // console.log({ projects });
+
   return {
     props: {
-      status: "message",
       data: projects,
     },
-    revalidate: 60,
   };
 }
