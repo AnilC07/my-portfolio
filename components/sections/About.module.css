@@ -7,12 +7,15 @@
 
 .about .text {
     width: 55%;
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.6rem;
+    text-align: justify;
 
     margin: 0 auto;
 }
 
+.text p{
+    margin-bottom: 1rem;
+}
 .text a {
     color: blue
 }
