@@ -17,6 +17,24 @@ justify-content: center;
     color: white;
 }
 
+.contact-action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-action p{
+    font-size: 1.2rem;
+}
+
+.contact-action a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
 .copyright{
     font-size: 1.6rem;
     padding-bottom: 2rem;
