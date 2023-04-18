@@ -1,0 +1,23 @@
+.footer{
+/* padding-top:6rem; */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+    background: rgb(32, 6, 71);
+    color: white;
+}
+
+.icons{
+    display: inline-flex;
+    gap: 30rem;
+    font-size: 3rem;
+    margin: 2rem 0;
+    
+    color: white;
+}
+
+.copyright{
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
