@@ -2,8 +2,8 @@
     width: 85%;
     margin: 0 auto;
     display: flex;
-
-    border: 1px solid black;
+    /* 
+    border: 1px solid black; */
 }
 
 .project-title {
@@ -14,30 +14,34 @@
     font-size: 3.5rem;
 }
 
+.image img {
+    display: block;
+    object-fit: cover;
+}
+
 
 .project-content {
-    padding: 1rem;
+    padding: 1rem 3rem;
 }
 
 .project-content h3 {
     font-size: 25px;
 }
 
-.actions{
+.actions {
     width: 85%;
-    margin: 0 auto;
+    margin: 4rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 3rem;
 }
 
-.link{
+.link {
     display: inline-block;
 }
 
-.link a{
+.link a {
     background: coral;
 
     padding: 2rem 3rem;
@@ -48,7 +52,8 @@
     font-weight: 600;
 }
 
-.write-comment, .read-comment{
+.write-comment,
+.read-comment {
     color: white;
     padding: 2rem 3rem;
     border-radius: 100px;
