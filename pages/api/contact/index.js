@@ -107,6 +107,8 @@ async function emailHandler(req, res) {
   }
 
   client.close();
+
+  res.status(201).json({status: 'success'})
 }
 
 export default emailHandler;
