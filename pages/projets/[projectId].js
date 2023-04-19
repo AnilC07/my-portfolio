@@ -36,12 +36,15 @@ function ProjetByID(props) {
             <div className={classes["project-content"]}>
               <div className={classes.objectif}>
                 <h3>Objectif :</h3>
-                <p>objectif du projets</p>
+                {projectData[0].objectif}
               </div>
               <div className={classes.knowledge}>
                 <h3>Connaissances acquisent :</h3>
                 <ul>
-                  <li>lister les connaissances</li>
+                {projectData[0].acquis.map((acquis,idx)=>{
+                  return <li key={idx}>- {acquis}</li>
+                })}
+                  
                 </ul>
               </div>
             </div>
@@ -54,7 +57,7 @@ function ProjetByID(props) {
               <p>Laisser un commentaire</p>
             </div>
             <div className={classes.link}>
-              <Link href="/">Se rendre sur le site de {projectData[0].titre}</Link>
+              <a href={projectData[0].site} target='_blank'>Acceder a l'application {projectData[0].titre}</a>
             </div>
           </div>
         </>
