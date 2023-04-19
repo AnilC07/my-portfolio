@@ -7,7 +7,6 @@ async function emailHandler(req, res) {
   }
 
   const { name, email, message, compagny, subject } = req.body;
-  // console.log(req.body);
 
   if (
     !name ||
@@ -74,12 +73,10 @@ async function emailHandler(req, res) {
     // res.status(200).json({message: "success"});
   } catch (error) {
     console.log(error.message);
-    res
-      .status(500)
-      .json({
-        message:
-          "Une erreur est apparue lors de l'envoie de votre message. Veuillez reessayer!",
-      });
+    res.status(500).json({
+      message:
+        "Une erreur est apparue lors de l'envoie de votre message. Veuillez reessayer!",
+    });
     return;
   }
 
@@ -108,7 +105,7 @@ async function emailHandler(req, res) {
 
   client.close();
 
-  res.status(201).json({status: 'success'})
+  res.status(201).json({ status: "success" });
 }
 
 export default emailHandler;

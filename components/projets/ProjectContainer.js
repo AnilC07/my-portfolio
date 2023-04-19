@@ -2,8 +2,6 @@ import classes from "./ProjectContainer.module.css";
 import ProjectWrapper from "./ProjectWrapper";
 
 function ProjectContainer({ projets }) {
-  // console.log(projets);
-
   return (
     <>
       <div className="section-title">

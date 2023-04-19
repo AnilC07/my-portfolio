@@ -3,9 +3,8 @@ import classes from "./ProjectCard.module.css";
 import Link from "next/link";
 
 function Card(props) {
-  // console.log(props);
   const { titre, image, description, id } = props;
-  // console.log(`/images/projets/${titre}/${image}`);
+
   return (
     <div className={classes.card}>
       <Link href={`/projets/${id}`}>

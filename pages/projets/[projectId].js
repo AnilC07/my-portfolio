@@ -1,13 +1,12 @@
 import Image from "next/image";
 import classes from "../../styles/ProjectByID.module.css";
-import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import projectIdHandler from "../api/projets/[projectId]";
 import { projectHandler } from "../api/projets";
 
 function ProjetByID(props) {
   const [projectData, setProjectData] = useState();
-  console.log(props)
 
   useEffect(() => {
     setProjectData(props.data);
@@ -16,7 +15,7 @@ function ProjetByID(props) {
   if (!projectData) {
     return <p>Loading...</p>;
   }
-  console.log({ projectData });
+
   return (
     <>
       {projectData && (
@@ -41,10 +40,9 @@ function ProjetByID(props) {
               <div className={classes.knowledge}>
                 <h3>Connaissances acquisent :</h3>
                 <ul>
-                {projectData[0].acquis.map((acquis,idx)=>{
-                  return <li key={idx}>- {acquis}</li>
-                })}
-                  
+                  {projectData[0].acquis.map((acquis, idx) => {
+                    return <li key={idx}>- {acquis}</li>;
+                  })}
                 </ul>
               </div>
             </div>
@@ -57,7 +55,9 @@ function ProjetByID(props) {
               <p>Laisser un commentaire</p>
             </div>
             <div className={classes.link}>
-              <a href={projectData[0].site} target='_blank'>Acceder a l'application {projectData[0].titre}</a>
+              <a href={projectData[0].site} target="_blank">
+                Acceder a l'application {projectData[0].titre}
+              </a>
             </div>
           </div>
         </>
@@ -71,9 +71,9 @@ export default ProjetByID;
 export async function getStaticPaths() {
   let projects = await projectHandler();
 
-    const paths = projects.map((project) => {
-      return { params: { projectId: project.id } };
-    });
+  const paths = projects.map((project) => {
+    return { params: { projectId: project.id } };
+  });
 
   return {
     paths: paths,
@@ -86,8 +86,6 @@ export async function getStaticProps(context) {
   const projectId = context.params.projectId;
 
   const theProject = await projectIdHandler(projectId);
-
-  console.log({theProject})
 
   return {
     props: {

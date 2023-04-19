@@ -23,8 +23,7 @@ const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      // console.log(sendMail)
-// const result = await sendMail.json()
+
       notificationCtx.showNotification({
         status: "success",
         title: "Le formulaire bien été soumis",
@@ -60,4 +59,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -3,7 +3,7 @@ import classes from "./Footer.module.css";
 
 import { GrMail, GrLinkedin } from "react-icons/gr";
 
-function Footer(props) {
+function Footer() {
   return (
     <footer className={classes.footer}>
       <div className={classes.icons}>

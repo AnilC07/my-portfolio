@@ -5,7 +5,6 @@ import ProjectContainer from "@/components/projets/ProjectContainer";
 import { projectHandler } from "./api/projets";
 
 export default function Home(props) {
-  // console.log(props);
   return (
     <>
       <Head>
