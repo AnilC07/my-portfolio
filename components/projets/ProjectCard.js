@@ -15,6 +15,7 @@ function Card(props) {
             alt={`vignette du projet ${titre}`}
             width="200"
             height="130"
+            // layout="responsive"
           />
         </div>
       </Link>

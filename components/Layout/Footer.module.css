@@ -1,41 +1,45 @@
-.footer{
-/* padding-top:6rem; */
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.footer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: rgb(32, 6, 71);
     color: white;
 }
 
-.icons{
+.icons {
     display: inline-flex;
-    gap: 30rem;
+    gap: 20rem;
     font-size: 3rem;
     margin: 2rem 0;
-    
-    color: white;
 }
 
-.contact-action{
+.contact-action {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.contact-action p{
+.contact-action p {
     font-size: 1.2rem;
 }
 
-.contact-action a{
+.contact-action a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-.copyright{
+.copyright {
     font-size: 1.6rem;
     padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 425px) {
+    .icons {
+        gap: 10rem
+    }
 }

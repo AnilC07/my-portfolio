@@ -1,14 +1,21 @@
-.navigation{
-font-size: 2.3rem;
-font-weight: 600;
-flex-basis: 20%;
+.navigation {
+    font-size: 2.3rem;
+    font-weight: 600;
 }
 
-.nav-items{
-display: flex;
-gap: 6rem;
+.nav-items {
+    display: flex;
+    gap: 12rem;
 }
 
-.nav-items li{
-    
+
+@media screen and (max-width:992px) {
+    .navigation {
+        width: 100%;
+    }
+
+    .nav-items {
+        width: 100%;
+        justify-content: space-between;
+    }
 }

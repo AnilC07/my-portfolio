@@ -13,6 +13,11 @@ function Navigation(props) {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
+      {/* <div className={classes["menu-burger"]}>
+        <span className="trait-sup"></span>
+        <span className="trait-mid"></span>
+        <span className="trait-down"></span>
+      </div> */}
     </nav>
   );
 }

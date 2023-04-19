@@ -16,3 +16,9 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+@media screen and (max-width: 625px) {
+    .projets {
+justify-content: center;
+    }
+}

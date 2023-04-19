@@ -24,7 +24,6 @@
     color: #fff;
     font-size: 4rem;
     display: block;
-    margin-bottom: 1rem;
 }
 
 .titre h2{
@@ -40,4 +39,16 @@
 .image img {
     display: block;
     width: 100%;
+}
+
+@media screen and (max-width:992px) {
+    .header{
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
 }
